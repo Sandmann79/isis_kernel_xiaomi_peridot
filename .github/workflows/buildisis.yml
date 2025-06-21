@@ -9,12 +9,12 @@ on:
         required: false
       KERNEL_TREE:
         description: 'Kernel Tree'
-        default: 'https://github.com/ahmedtohamy1/kernel_xiaomi_peridot'
+        default: 'https://github.com/Sandmann79/isis_kernel_xiaomi_peridot'
         required: true
       KERNEL_TREE_BRANCH:
         description: 'Kernel Tree Branch'
         required: true
-        default: 'stable-r1'
+        default: 'stable-r1.6'
       CODENAME:
         description: 'Phone Codename'
         default: 'peridot'
@@ -37,7 +37,7 @@ on:
       KERNELSU_OPTION:
         description: 'Choose KernelSU setup option (1: next, 2: next-susfs, 3: none)'
         required: true
-        default: '1'
+        default: '2'
         type: choice
         options:
           - '1'
@@ -46,7 +46,6 @@ on:
 
 jobs:
   build:
-    if: github.event.repository.owner.id == github.event.sender.id
     runs-on: ubuntu-latest
     environment: Telegram
     permissions:
